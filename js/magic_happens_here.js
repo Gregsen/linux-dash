@@ -226,6 +226,37 @@
           
         }, "json" );
     }
+
+    function get_lxc(){
+        
+        $.get( "sh/lxc.php", function( data ) {
+          
+            var table = $('#lxc_dashboard');
+            
+            var ex = document.getElementById('lxc_dashboard');        
+            if ( $.fn.DataTable.fnIsDataTable( ex ) ) {
+        		table.hide().dataTable().fnClearTable();                         
+            	table.dataTable( ).fnDestroy();
+            	 
+        	}
+        	
+            table.dataTable({
+                "aaData": data,
+                "aoColumns": [
+                    { "sTitle":"Name","mDataProp":null },
+		    { "sTitle":"Status","mDataProp":null},
+                    { "sTitle":"IPv4","mDataProp":null },
+                    { "sTitle":"Ipv6","mDataProp":null },
+                    { "sTitle":"Autostart","mDataProp":null}
+                 ],
+                "bPaginate": false,
+                "bFilter": false,
+                "bAutoWidth": true,
+                "bInfo": false
+            }).fadeIn();
+          
+        }, "json" );
+    }
     
     function get_whereis(){
         
@@ -306,6 +337,7 @@
         get_ram();
         get_ps();
         get_df();
+	get_lxc();
         get_os_info();
         get_users();
         get_online();

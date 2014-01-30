@@ -43,6 +43,7 @@
       <ul class="mainnav">
         <li><a href="#refresh-os"><i class="icon-dashboard"></i><span>General</span> </a> </li>
         <li><a href="#refresh-df"><i class="icon-list-alt"></i><span>Disk</span> </a> </li>
+        <li><a href="#refresh-lxc"><i class="icon-list-alt"></i><span>LXC</span> </a> </li>
         <li><a href="#refresh-ps"><i class="icon-list-alt"></i><span>CPU</span> </a> </li>
         <li><a href="#refresh-ram"><i class="icon-list-alt"></i><span>RAM</span> </a> </li>
         <li><a href="#refresh-users"><i class="icon-group"></i><span>Users</span> </a> </li>
@@ -141,7 +142,27 @@
         </div>
         
      </div>
-    
+      
+    <div class="row">
+         <div class="span6">
+           <div class="widget">
+            <div class="widget-header"> <i class="icon-list"></i>
+              <h3>LXC Container</h3>
+              <div id="refresh-lxc" onClick="javascript:get_lxc();" class="btn btn-mini">
+                <i class="icon-refresh"></i> &nbsp;&nbsp;Refresh
+              </div>
+            </div>
+            <!-- /widget-header -->
+            <div class="widget-content">
+              <table id="lxc_dashboard" class="table table-hover table-condensed table-bordered" >
+              </table>
+            </div>
+            <!-- /widget-content --> 
+          </div>
+          <!-- /widget -->
+         </div>
+     </div>
+
     <div class="row">
          <div class="span6">
            <div class="widget">
