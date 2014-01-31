@@ -1,3 +1,3 @@
 <?php
     $name = htmlspecialchars($_GET['name']);
-    exec("lxc-stop -n $name -t 0");
+    exec("sudo lxc-start -n $name");
