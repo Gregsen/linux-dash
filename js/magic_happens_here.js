@@ -239,15 +239,16 @@
             	table.dataTable( ).fnDestroy();
             	 
         	}
-        	
+
             table.dataTable({
                 "aaData": data,
                 "aoColumns": [
-                    { "sTitle":"Name","mDataProp":null },
+                    { "sTitle":"Name","mDataProp":null},
 		    { "sTitle":"Status","mDataProp":null},
                     { "sTitle":"IPv4","mDataProp":null },
                     { "sTitle":"Ipv6","mDataProp":null },
-                    { "sTitle":"Autostart","mDataProp":null}
+                    { "sTitle":"Autostart","mDataProp":null},
+		    { "sTitle":"Action", "mDataProp":null}
                  ],
                 "bPaginate": false,
                 "bFilter": false,
@@ -256,8 +257,20 @@
             }).fadeIn();
           
         }, "json" );
-    }
+	    }
     
+    function lxc_start( name ) {
+	$.get ( "sh/lxc_start.php?name=" + name, function (data) {
+		get_lxc();
+    	});
+     }
+
+    function lxc_stop( name ) {
+	$.get ( "sh/lxc_stop.php?name=" + name, function (data) {
+		get_lxc();
+    	});
+     }
+
     function get_whereis(){
         
         $.get( "sh/whereis.php", function( data ) {
@@ -286,6 +299,7 @@
         }, "json" );
     }
     
+
     function get_os_info(){ 
         generate_os_data('sh/issue.php','#os-info');
         generate_os_data('sh/hostname.php','#os-hostname');
