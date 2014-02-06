@@ -244,13 +244,15 @@
                 "aaData": data,
                 "aoColumns": [
                     { "sTitle":"Name","mDataProp":null},
-		    { "sTitle":"Status","mDataProp":null},
+	        	    { "sTitle":"Status","mDataProp":null},
                     { "sTitle":"IPv4","mDataProp":null },
                     { "sTitle":"Ipv6","mDataProp":null },
                     { "sTitle":"Autostart","mDataProp":null},
-		    { "sTitle":"Action", "mDataProp":null}
+		            { "sTitle":"Action", "mDataProp":null}
                  ],
-                "bPaginate": false,
+                "aaSorting":[[2,"desc" ]],
+                "bPaginate": true,
+                "sPaginationType": "full_numbers",
                 "bFilter": false,
                 "bAutoWidth": true,
                 "bInfo": false
